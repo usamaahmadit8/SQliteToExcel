@@ -34,15 +34,17 @@ dependencies {
     implementation 'javax.xml.stream:stax-api:1.0'
     implementation 'com.fasterxml:aalto-xml:1.2.2'
 }
-afterEvaluate{
-    publishing{
-        publications{
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.usamaahmadit8'
-                artifactId = 'SQliteToExcel'
-                version = '1.0'
-            }
-        }
-    }
-}
+   afterEvaluate {
+       publishing{
+           publications{
+               mavenJava(MavenPublication) {
+
+                   groupId = 'com.github.usamaahmadit8'
+                   artifactId = 'SQliteToExcel'
+                   version = '1.0'
+                   from components.release
+               }
+           }
+       }
+   }
+
